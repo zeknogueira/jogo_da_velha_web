@@ -42,17 +42,24 @@ main{
     background-color: black;
 }
 
-.casas button{
+#board button{
+    font-size: 60px;
+    align-items: center;
+    justify-content: center;
     border: none;
     text-decoration: none;
     width: 96px;
     height: 96px;
     background-color: white;
 }
-.casas button:hover{
+#board button:hover{
     width: 96px;
     height: 96px;
-    background-color: blue;
+    background-color: rgb(182, 182, 182);
+}
+#board button:disabled{
+    text-decoration: none;
+    color: black;
 }
 footer{
     height: 10vh;
