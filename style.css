@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body *{    
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(187, 185, 185);
+}
+header{
+    height: 10vh;
+    flex-direction: row;
+}
+header h1:hover{
+    color: blue;
+
+}
+main{
+    height: 80vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#principal{
+    background-color: rgb(239, 240, 239);
+    width: 400px;
+    height: 400px;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   border-radius: 10px;
+
+}
+#principal #board{
+    flex-basis: auto;
+    height: 300px;
+    max-width: 300px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    background-color: black;
+}
+
+.casas button{
+    border: none;
+    text-decoration: none;
+    width: 96px;
+    height: 96px;
+    background-color: white;
+}
+.casas button:hover{
+    width: 96px;
+    height: 96px;
+    background-color: blue;
+}
+footer{
+    height: 10vh;
+    flex-direction: row;
+    position: fixed;
+    bottom: 0;
+}
+footer p, footer p a{
+    display: inline-flexbox !important;
+}
