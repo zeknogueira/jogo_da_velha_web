@@ -1,20 +1,50 @@
-let vez = "x"
-
-function inserir_jogada(casa_selecionada) {
-    const casa_da_vez = document.getElementById(`casa${casa_selecionada}`)
-    casa_da_vez.disabled =true
-    console.log(casa_da_vez)
-    if (vez === "x") {
+let turn = "x"
+let moves_counter_x = []
+let moves_counter_b = []
+function insert_move(square_selected) {
+    const square_turn = document.getElementById(`square${square_selected}`)
+    square_turn.disabled = true
+    console.log(square_turn)
+    if (turn === "x") {
+        moves_counter_x.push(square_selected)
         text = document.createTextNode("X")
-        casa_da_vez.appendChild(text)
-        vez = "b"
-        console.log(vez)
+        square_turn.appendChild(text)
+        turn = "b"
+        console.log(turn)
+        console.log("the moves of X are " + moves_counter_x)
     }
-    else{
+    else {
+        moves_counter_b.push(square_selected)
         text = document.createTextNode("O")
-        casa_da_vez.appendChild(text)
-        vez = "x"
-        console.log(vez)
+        square_turn.appendChild(text)
+        turn = "x"
+        console.log(turn)
+        console.log("the moves of O are " + moves_counter_b)
     }
-
+    result_check()
 }
+
+function result_check() {
+    if (moves_counter_x.includes(1) && moves_counter_x.includes(2) && moves_counter_x.includes(3) ||
+        moves_counter_x.includes(4) && moves_counter_x.includes(5) && moves_counter_x.includes(6) ||
+        moves_counter_x.includes(7) && moves_counter_x.includes(8) && moves_counter_x.includes(9) ||
+        moves_counter_x.includes(1) && moves_counter_x.includes(4) && moves_counter_x.includes(7) ||
+        moves_counter_x.includes(2) && moves_counter_x.includes(5) && moves_counter_x.includes(8) ||
+        moves_counter_x.includes(3) && moves_counter_x.includes(6) && moves_counter_x.includes(9) ||
+        moves_counter_x.includes(1) && moves_counter_x.includes(5) && moves_counter_x.includes(9) ||
+        moves_counter_x.includes(7) && moves_counter_x.includes(5) && moves_counter_x.includes(3)) {
+        console.log("x won")
+    }
+    else
+        if (moves_counter_b.includes(1) && moves_counter_b.includes(2) && moves_counter_b.includes(3) ||
+            moves_counter_b.includes(4) && moves_counter_b.includes(5) && moves_counter_b.includes(6) ||
+            moves_counter_b.includes(7) && moves_counter_b.includes(8) && moves_counter_b.includes(9) ||
+            moves_counter_b.includes(1) && moves_counter_b.includes(4) && moves_counter_b.includes(7) ||
+            moves_counter_b.includes(2) && moves_counter_b.includes(5) && moves_counter_b.includes(8) ||
+            moves_counter_b.includes(3) && moves_counter_b.includes(6) && moves_counter_b.includes(9) ||
+            moves_counter_b.includes(1) && moves_counter_b.includes(5) && moves_counter_b.includes(9) ||
+            moves_counter_b.includes(7) && moves_counter_b.includes(5) && moves_counter_b.includes(3)) {
+            console.log("b won")
+
+    }
+}   
