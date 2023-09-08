@@ -1,2 +1,2 @@
-# jogo_da_velha_web
-Jogo da Velha Utilizando HTML, CSS e JavaScript
+# tic-tac-toe_web
+tic-tac-toe with HTML, CSS e JavaScript
