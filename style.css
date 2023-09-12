@@ -63,6 +63,7 @@ a{
     width: 96px;
     height: 96px;
     background-color: white;
+    
 }
 #board button:hover{
     width: 96px;
@@ -71,7 +72,7 @@ a{
 }
 #board button:disabled{
     text-decoration: none;
-    color: black;
+    color: blue;
 }
 footer{
     width: 100vw;
