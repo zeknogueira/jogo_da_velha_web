@@ -29,13 +29,14 @@ function insert_move(square_selected) {
 function result_check() {
     if (moves_counter_x.includes(1) && moves_counter_x.includes(2) && moves_counter_x.includes(3)) {
         /*color_result(won_moves_counter_x)*/
-        won_moves_counter_x.push([1,2,3])
+        won_moves_counter_x.push(1,2,3)
         console.log("the array is" + won_moves_counter_x)
         color_result(won_moves_counter_x)
         
     } else
         if (moves_counter_x.includes(4) && moves_counter_x.includes(5) && moves_counter_x.includes(6)) {
-            color_result(won_moves_counter_x[4, 5, 6])
+            won_moves_counter_x.push([4,5,6])
+            color_result(won_moves_counter_x)
         } else
             if (moves_counter_x.includes(7) && moves_counter_x.includes(8) && moves_counter_x.includes(9)) {
                 color_result(won_moves_counter_x[7, 8, 9])
@@ -57,8 +58,13 @@ function result_check() {
                                 }
 }
 function color_result(won_moves_counter_x){
-    for (let i = 0; i < won_moves_counter_x.length; i++) {
-        document.getElementById(`square${i}`)disabled.style.color = "green"       
+    for (let i = 0; i < won_moves_counter_x.length; i++){    
+        // let element = 
+        document.getElementById(`square${moves_counter_x[i]}`).style.color = "green"
+        //element.style.color = "green"
+        console.log(i)
+        console.log(won_moves_counter_x.length)
+        // disabled.style.color = "green"       
     }
 }
 /*
