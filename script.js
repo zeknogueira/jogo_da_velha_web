@@ -27,65 +27,86 @@ function insert_move(square_selected) {
 }
 
 function result_check() {
-    if (moves_counter_x.includes(1) && moves_counter_x.includes(2) && moves_counter_x.includes(3)) {
-        /*color_result(won_moves_counter_x)*/
-        won_moves_counter_x.push(1,2,3)
-        console.log("the array is" + won_moves_counter_x)
-        color_result(won_moves_counter_x)
-        
-    } else
-        if (moves_counter_x.includes(4) && moves_counter_x.includes(5) && moves_counter_x.includes(6)) {
-            won_moves_counter_x.push([4,5,6])
+    if (turn === "b") {
+
+        if (moves_counter_x.includes(1) && moves_counter_x.includes(2) && moves_counter_x.includes(3)) {
+            won_moves_counter_x.push(1, 2, 3)
             color_result(won_moves_counter_x)
+
         } else
-            if (moves_counter_x.includes(7) && moves_counter_x.includes(8) && moves_counter_x.includes(9)) {
-                color_result(won_moves_counter_x[7, 8, 9])
+            if (moves_counter_x.includes(4) && moves_counter_x.includes(5) && moves_counter_x.includes(6)) {
+                won_moves_counter_x.push(4, 5, 6)
+                color_result(won_moves_counter_x)
             } else
-                if (moves_counter_x.includes(1) && moves_counter_x.includes(4) && moves_counter_x.includes(7)) {
-                    color_result(won_moves_counter_x[1, 4, 7])
+                if (moves_counter_x.includes(7) && moves_counter_x.includes(8) && moves_counter_x.includes(9)) {
+                    won_moves_counter_x.push(7, 8, 9)
+                    color_result(won_moves_counter_x)
                 } else
-                    if (moves_counter_x.includes(2) && moves_counter_x.includes(5) && moves_counter_x.includes(8)) {
-                        color_result(won_moves_counter_x[2, 5, 8])
+                    if (moves_counter_x.includes(1) && moves_counter_x.includes(4) && moves_counter_x.includes(7)) {
+                        won_moves_counter_x.push(1, 4, 7)
+                        color_result(won_moves_counter_x)
                     } else
-                        if (moves_counter_x.includes(3) && moves_counter_x.includes(6) && moves_counter_x.includes(9)) {
-                            color_result(won_moves_counter_x[3, 6, 9])
+                        if (moves_counter_x.includes(2) && moves_counter_x.includes(5) && moves_counter_x.includes(8)) {
+                            won_moves_counter_x.push(2, 5, 8)
+                            color_result(won_moves_counter_x)
                         } else
-                            if (moves_counter_x.includes(1) && moves_counter_x.includes(5) && moves_counter_x.includes(9)) {
-                                color_result(won_moves_counter_x[1, 5, 9])
+                            if (moves_counter_x.includes(3) && moves_counter_x.includes(6) && moves_counter_x.includes(9)) {
+                                won_moves_counter_x.push(3, 6, 9)
+                                color_result(won_moves_counter_x)
                             } else
-                                if (moves_counter_x.includes(7) && moves_counter_x.includes(5) && moves_counter_x.includes(3)) {
-                                    color_result(won_moves_counter_x[7, 5, 3])
-                                }
-}
-function color_result(won_moves_counter_x){
-    for (let i = 0; i < won_moves_counter_x.length; i++){    
+                                if (moves_counter_x.includes(1) && moves_counter_x.includes(5) && moves_counter_x.includes(9)) {
+                                    won_moves_counter_x.push(1, 5, 9)
+                                    color_result(won_moves_counter_x)
+                                } else
+                                    if (moves_counter_x.includes(7) && moves_counter_x.includes(5) && moves_counter_x.includes(3)) {
+                                        won_moves_counter_x.push(7, 5, 3)
+                                        color_result(won_moves_counter_x)
+                                    }
+    }
+    if (turn === "x") {
+        if (moves_counter_b.includes(1) && moves_counter_b.includes(2) && moves_counter_b.includes(3)) {
+            won_moves_counter_b.push(1, 2, 3)
+            color_result(won_moves_counter_b)
+
+        } else
+            if (moves_counter_b.includes(4) && moves_counter_b.includes(5) && moves_counter_b.includes(6)) {
+                won_moves_counter_b.push(4, 5, 6)
+                color_result(won_moves_counter_b)
+            } else
+                if (moves_counter_b.includes(7) && moves_counter_b.includes(8) && moves_counter_b.includes(9)) {
+                    won_moves_counter_b.push(7, 8, 9)
+                    color_result(won_moves_counter_b)
+                } else
+                    if (moves_counter_b.includes(1) && moves_counter_b.includes(4) && moves_counter_b.includes(7)) {
+                        won_moves_counter_b.push(1, 4, 7)
+                        color_result(won_moves_counter_b)
+                    } else
+                        if (moves_counter_b.includes(2) && moves_counter_b.includes(5) && moves_counter_b.includes(8)) {
+                            won_moves_counter_b.push(2, 5, 8)
+                            color_result(won_moves_counter_b)
+                        } else
+                            if (moves_counter_b.includes(3) && moves_counter_b.includes(6) && moves_counter_b.includes(9)) {
+                                won_moves_counter_b.push(3, 6, 9)
+                                color_result(won_moves_counter_b)
+                            } else
+                                if (moves_counter_b.includes(1) && moves_counter_b.includes(5) && moves_counter_b.includes(9)) {
+                                    won_moves_counter_b.push(1, 5, 9)
+                                    color_result(won_moves_counter_b)
+                                } else
+                                    if (moves_counter_b.includes(7) && moves_counter_b.includes(5) && moves_counter_b.includes(3)) {
+                                        won_moves_counter_b.push(7, 5, 3)
+                                        color_result(won_moves_counter_b)
+                                    }
+    }
+
+}                                
+function color_result(won_moves_counter) {
+    for (let i = 0; i < won_moves_counter.length; i++) {
         // let element = 
-        document.getElementById(`square${moves_counter_x[i]}`).style.color = "green"
+        document.getElementById(`square${won_moves_counter[i]}`).style.color = "green"
         //element.style.color = "green"
         console.log(i)
-        console.log(won_moves_counter_x.length)
+        console.log(won_moves_counter.length)
         // disabled.style.color = "green"       
     }
 }
-/*
-erro na seleção do elemento pelo id na função color_result. Possível solução em:
-https://pt.stackoverflow.com/questions/143824/alterar-classe-de-um-button-quando-ele-estiver-desabilitado-e-vice-versa
-*/
-
-/*
-console.log("x won")
-}
-else
-if (moves_counter_b.includes(1) && moves_counter_b.includes(2) && moves_counter_b.includes(3) ||
-moves_counter_b.includes(4) && moves_counter_b.includes(5) && moves_counter_b.includes(6) ||
-moves_counter_b.includes(7) && moves_counter_b.includes(8) && moves_counter_b.includes(9) ||
-moves_counter_b.includes(1) && moves_counter_b.includes(4) && moves_counter_b.includes(7) ||
-moves_counter_b.includes(2) && moves_counter_b.includes(5) && moves_counter_b.includes(8) ||
-moves_counter_b.includes(3) && moves_counter_b.includes(6) && moves_counter_b.includes(9) ||
-moves_counter_b.includes(1) && moves_counter_b.includes(5) && moves_counter_b.includes(9) ||
-moves_counter_b.includes(7) && moves_counter_b.includes(5) && moves_counter_b.includes(3)) {
-console.log("b won")
-
-}
-} 
-*/
