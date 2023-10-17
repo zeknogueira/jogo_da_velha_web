@@ -43,6 +43,9 @@ a{
    box-shadow: 3px 2px 10px #66646496;
 
 }
+.casas{
+    cursor: pointer;
+}
 #principal #board{
     flex-basis: auto;
     height: 300px;
